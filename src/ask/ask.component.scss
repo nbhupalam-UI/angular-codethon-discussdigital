@@ -1,0 +1,55 @@
+.question{
+    margin-top: 40px;
+    @media screen and (max-width:767px){
+        margin: 40px 20px 0;
+    }
+    .question-wrapper{
+        text-align:center;
+    }
+    .question-con{
+        max-width: 600px;
+        margin: auto;
+       padding: 0 10px;
+       @media only screen and (max-width: 767px) {
+        .title {
+
+            padding: 0 10px 0 10px;
+        }
+        .description {
+
+            padding: 0 10px 0 10px;
+        }
+         .code {
+
+            padding: 0 10px 0 10px;
+            width: 94%;
+        }
+        .code-preview {
+
+            overflow-x: hidden;
+            width: 100%;
+            padding: 0 10px 0 10px;
+        }
+        .interest {
+            padding: 0 10px 0 10px;  
+
+          }
+
+       }
+    }
+
+    .mat-form-field{
+        width: 100%;
+    }
+    .code{
+        width: 100%;
+        margin-bottom: 30px;   
+    }
+    .tags{
+        mat-form-field{
+            width: 50%;
+        }
+
+    }
+
+}

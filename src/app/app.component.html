@@ -1,0 +1,52 @@
+<div id="header" [ngClass]="{'loggedout': !isLoggedIn, 'loggedin': isLoggedIn}">
+  <h1 class="logo-title">
+    <a [routerLink]="['./']">Discuss Digital</a>
+  </h1>
+  <mat-form-field class="listSearch-desktop">
+    <input matInput placeholder="Search a Question" type="text" name="search" [formControl]="myControl" [matAutocomplete]="auto" (input)="onSearchChange($event.target.value)">
+  </mat-form-field>
+
+  <mat-autocomplete #auto="matAutocomplete">
+    <mat-option *ngFor="let article of resultantArticlesAfterSearch" [value]="article.title">
+      <a [routerLink]="['./../article/',article._id]" class="article-link-search">
+        <mat-card-title>{{article.title}}</mat-card-title>
+      </a>
+    </mat-option>
+  </mat-autocomplete>
+
+  <div id="loginDiv">
+    <a href="javascript:void(0)" class="ask-link" (click)="openDialog('ask')" *ngIf="!isLoggedIn">Ask</a>
+    <button mat-raised-button color="primary" class="login-btn" (click)="openDialog()" *ngIf="!isLoggedIn">Login / Register</button>
+
+    <div *ngIf="isLoggedIn">
+      <a href="javascript:void(0)" class="ask-link" (click)="openDialog('ask')">Ask</a>
+      <a [routerLink]="['./../profile']" class="ask-link profile">Profile</a>
+      <button mat-raised-button color="primary" class="login-btn" (click)="onLogoutClick()">Logout</button>
+    </div>
+  </div>
+
+  <div class="show-mobile" *ngIf="isLoggedIn">
+    <mat-form-field class="listSearch-mobile">
+      <input matInput placeholder="Search a Question" type="text" name="search" [formControl]="myControl" [matAutocomplete]="auto">
+    </mat-form-field>
+
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let article of articles" [value]="article.title">
+        <a [routerLink]="['./../article/',article._id]" class="article-link-search">
+          <mat-card-title>{{article.title}}</mat-card-title>
+        </a>
+      </mat-option>
+    </mat-autocomplete>
+<a [routerLink]="['./../profile']" class="listSearch-profile profile">Profile</a>
+  </div>
+</div>
+
+
+
+
+<div class="route-section">
+  <router-outlet></router-outlet>
+</div>
+
+<!-- <mat-spinner></mat-spinner> -->
+

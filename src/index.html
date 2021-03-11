@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Digitaldiscuss</title>
+<meta name="description" content="Angular 6 with mean stack pwa application boilerplate code">
+<meta name="theme-color" content="#00254c">
+
+  <base href="/">
+<link rel="manifest" href="./manifest.json">  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body class="container">
+  <noscript>
+	<h2>JavaScript is disabled! Why you want to do so? 
+	Please enable JavaScript in your web browser!</h2>
+
+</noscript>
+<app-root>
+  <div class="load-container" id="loadContainer">
+    <div class="loader"></div>
+  </div>
+</app-root>
+
+<script src="./pouchdb.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      swRegistration = registration;
+      
+      console.log('Service Worker registered');
+    }).catch(function(err) {
+      console.log('Service Worker registration failed: ', err);
+    });
+  }
+</script>
+
+</body>
+</html>

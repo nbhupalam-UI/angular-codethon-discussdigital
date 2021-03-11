@@ -1,0 +1,50 @@
+<div class="signin-form">
+  <i class="close-icon" (click)="dialogRef.close();">
+  <img src="./../../assets/close-icon.png">
+  </i>
+  <div class="signin-container">
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Email Id" [(ngModel)]="email" type="email" required>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Password" [(ngModel)]="password" type="password" required>
+    </mat-form-field>
+    <mat-form-field class="full-width" *ngIf="isRegister">
+      <input matInput placeholder="Name" [(ngModel)]="name" required>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" *ngIf="isRegister">
+      <input matInput placeholder="Seat Number" [(ngModel)]="seatNumber" required>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" *ngIf="isRegister">
+      <input matInput placeholder="Designation" [(ngModel)]="designation" required>
+    </mat-form-field>
+    <div *ngIf="isRegister" style="display:flex;align-items:center;">Interests </div>
+    <div *ngIf="isRegister">
+      <mat-form-field class="demo-chip-list" style="width:100%;">
+  <mat-chip-list #chipList>
+    <mat-chip *ngFor="let interest of intrestes;" [selectable]="selectable"
+             [removable]="removable" (removed)="remove(interest)">
+      {{interest}}
+      <mat-icon matChipRemove *ngIf="removable" style="margin-left:7px;font-size:12px;position:relative;font-weight: bold;">X</mat-icon>
+    </mat-chip>
+    <input placeholder="Interest..."
+           [matChipInputFor]="chipList"
+           [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+           [matChipInputAddOnBlur]="addOnBlur"
+           (matChipInputTokenEnd)="add($event)" /><span class="add" (click)="add($event)">+</span>
+  </mat-chip-list>
+</mat-form-field>
+    </div>
+
+    <div class="action-btns">
+      <button mat-raised-button [disabled]="(email && password)?false:true" color="primary" class="login-btn" (click)="onLoginClick()" *ngIf="!isRegister" >Log In</button>
+      <button mat-raised-button  color="primary" (click)="onRegisterClick()" *ngIf="!isRegister">Register</button>
+      <button mat-raised-button [disabled]="(email && password && name && seatNumber && designation )?false:true" color="primary" (click)="onSubmitClick()" *ngIf="isRegister">Submit</button>
+
+    </div>
+  </div>
+</div>
+

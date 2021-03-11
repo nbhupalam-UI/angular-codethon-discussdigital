@@ -1,0 +1,115 @@
+.profile{
+    display: flex;
+    flex-direction: column;
+    width: 100% ;
+    margin: auto;
+    padding: 0px;
+	margin-top:70px;
+	.profile-section , .question-section{
+		padding: 0 10px;
+	}
+    .title{
+        text-align: center;
+    }
+    label{
+	    font-weight:bold;
+	    width:25%;
+    	display:inline-block;
+    };
+    .profile-field{
+	    display:inline-block;
+	    width:75%;
+    	font-weight:normal;
+    	word-break:break-all;
+	}
+	.question-section{
+		.tab-item-article{
+			margin: 10px;
+			.comments-bottom{
+				display: flex;
+				.author-details,.like-details{
+					flex:1;
+				}
+				.like-details{
+				   text-align: right;
+
+				   .like-icon {
+					display: inline-block;
+					width: 22px;
+					height: 20px;
+					vertical-align: bottom;
+					&.active {
+					  fill: #00254c;
+					}
+				  }
+				  .dislike-icon {
+					display: inline-block;
+					width: 22px;
+					height: 20px;
+					vertical-align: bottom;
+					&.active {
+					  fill: #ff8a65;
+					}
+				  }
+				  b {
+					margin-right: 10px;
+
+					span {
+						font-size: 1rem;
+						margin-right: 5px;
+					}
+				  }
+				}
+				p{
+					margin:0;
+			}
+			.author-details{
+				flex:1;
+				font-size: 12px;
+			}
+			.like-details{
+				font-size: 12px;
+			}
+			}
+		}
+	}
+	.mat-card-header{
+		margin:0;
+	}
+}
+@media screen and (min-width:992px){
+	.profile{
+	    display: flex;
+	    flex-direction: row-reverse;
+	    width: 100% ;
+	    margin: auto;
+	    padding-top: 30px;
+	    height:calc(100vh - 150px);
+	    margin-top:70px;
+	    .profile-section{
+	    width:35%;
+	    padding:10px 30px;
+		    .title{
+		        text-align: center;
+		    }
+		    label{
+			    font-weight:bold;
+			    width:25%;
+		    	display:inline-block;
+		    };
+		    .profile-field{
+			    display:inline-block;
+			    width:75%;
+		    	font-weight:normal;
+		    	word-break:break-all;
+		    }
+	    }
+	    .question-section{
+	    	width:60%;
+	    	padding:10px 30px;
+			overflow-y:scroll;
+			margin:0 15px;
+	    }
+
+	}
+}

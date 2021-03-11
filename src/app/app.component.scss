@@ -1,0 +1,199 @@
+.route-section {
+  margin-top: 150px;
+}
+
+#header {
+  .logo-title {
+    font-size: 28px;
+    a {
+      color: white;
+      text-decoration: none;
+      &:focus,
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    @media screen and (max-width:767px) {
+      a {
+        font-size: 18px;
+      }
+    }
+  }
+  .ask-link {
+    color: white;
+    vertical-align: sub;
+    font-size: 1.2rem;
+    text-decoration: none;
+    &:hover {
+      text-decoration-line: underline;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+  /deep/ .mat-form-field-appearance-legacy .mat-form-field-label {
+    color: #fff !important;
+  }
+  /deep/ .mat-form-field-appearance-legacy .mat-form-field-underline {
+    background: white;
+  }
+  /deep/ .mat-select-arrow {
+    color: white;
+  }
+  .article-link-search {
+    text-decoration: none;
+    &:focus,
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .show-mobile {
+    display: none;
+  }
+}
+
+@media screen and (min-width:992px) {
+  #header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    height: 100px;
+    padding: 0px 15px;
+    margin-bottom: 1px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
+    background: #00254c;
+    color: #fff;
+    b {
+      color: #fff;
+    }
+    .listSearch-desktop {
+      width: 33%;
+      color: #fff;
+      margin: 0px 10px;
+    }
+    #loginDiv {
+      button {
+        margin: 0 30px;
+        background-color: transparent;
+        border: 1px solid white;
+      }
+    }
+    mat-option {
+      a {
+        color: black;
+      }
+    }
+    .ask-link {
+      margin-right: 20px;
+    }
+  }
+  #listSearch-mobile {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width:991px) {
+  #header .logo-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width:991px) {
+  .route-section {
+    margin-top: 100px;
+  }
+  #header {
+    background-color: white;
+    padding: 0px 5px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
+    background: #00254c;
+    color: #fff;
+    b {
+      color: #fff;
+    }
+    .logo-title {
+      font-size: 1.6rem;
+    }
+    .listSearch-mobile {
+      width: 58%;
+      display: inline-block;
+    }
+    .listSearch-profile {
+      width: 38%;
+      display: inline-block;
+      margin-left: 4%;
+      color: #fff;
+      vertical-align: sub;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+    .listSearch-desktop {
+      display: none;
+    }
+    #loginDiv {
+      button {
+		margin: 0 0 0 30px;
+		background: transparent;
+		border: 1px solid white;
+      }
+    }
+    .show-mobile {
+      display: block;
+    }
+    &.loggedout {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+      height: 100px;
+    }
+    &.loggedin {
+      .logo-title {
+        display: inline-block;
+      }
+      #loginDiv {
+        float: right;
+        margin-top: 17px;
+      }
+      .ask-link {
+        top: 0;
+        padding: 0 5px;
+        &.profile{
+          @media screen and (max-width:991px) {
+            display: none;
+          }
+        }
+      }
+      +.route-section {
+        margin-top: 130px;
+      }
+    }
+  }
+  mat-option {
+    a {
+      color: black;
+    }
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width:767.5px) {
+  #header {
+    #loginDiv {
+      button {
+		margin: 0 0 0 15px;
+      }
+    }
+  }
+}

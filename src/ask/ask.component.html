@@ -1,0 +1,48 @@
+<div class="question">
+    <div class="question-con">
+        <h2 class="question-wrapper"><b>Ask your Question</b></h2>
+    <div class="title">
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Question" value="question" [(ngModel)]="question" required>
+        </mat-form-field>
+    </div>
+    <div class="description">
+         <mat-form-field class="example-full-width">
+            <textarea matInput placeholder="Description" value="description" [(ngModel)]="description"></textarea>
+        </mat-form-field>
+    </div>
+    <div class="code">
+        <mat-form-field class="example-full-width">
+            <textarea matInput placeholder="Code" value="code" [(ngModel)]="code"></textarea>
+        </mat-form-field>
+    </div>
+    <div class="code-preview">
+        <pre><code>{{code}}</code></pre>
+    </div>
+    <div class="interest">
+    <div style="display:flex;flex-wrap:wrap;" class="tags">
+
+    </div>
+
+    <mat-form-field class="demo-chip-list" style="width:100%;">
+  <mat-chip-list #chipList>
+    <mat-chip *ngFor="let interest of intrestes;" [selectable]="selectable"
+             [removable]="removable" (removed)="remove(interest)">
+      {{interest}}
+      <mat-icon matChipRemove *ngIf="removable" style="margin-left:7px;font-size:12px;position:relative;font-weight: bold;">X</mat-icon>
+    </mat-chip>
+    <input placeholder="Interest..."
+           [matChipInputFor]="chipList"
+           [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+           [matChipInputAddOnBlur]="addOnBlur"
+           (matChipInputTokenEnd)="add($event)" /><span class="add" (click)="add($event)">+</span>
+  </mat-chip-list>
+</mat-form-field>
+
+    </div>
+    <div style="text-align: center;">
+        <button mat-raised-button color="primary" (click)="ask()" [disabled]="question?false:true">Submit</button>
+    </div>
+    </div>
+
+</div>

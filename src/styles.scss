@@ -1,0 +1,112 @@
+@import '~@angular/material/theming';
+@include mat-core();
+$digiOn-app-primary: mat-palette($mat-indigo, 600);
+$digiOn-app-accent : mat-palette($mat-green, A200, A100, A400);
+$digiOn-app-warn : mat-palette($mat-red);
+$digiOn-app-theme: mat-light-theme($digiOn-app-primary, $digiOn-app-accent, $digiOn-app-warn);
+@include angular-material-theme($digiOn-app-theme);
+$digiOff-primary: mat-palette($mat-grey);
+$digiOff-accent : mat-palette($mat-blue-grey, A200, A100, A400);
+$digiOff-warn : mat-palette($mat-deep-orange);
+$digiOff-theme : mat-light-theme($digiOff-primary, $digiOff-accent, $digiOff-warn);
+.digiOff-theme {
+  background-color: #DCDCDC;
+  @include angular-material-theme($digiOff-theme);
+}
+
+.mat-input-underline {
+  border-color: black;
+}
+
+md-input-container.ng-invalid.ng-touched {
+  .mat-input-underline {
+    border-color: mat-color($mat-red, 500, 1);
+  }
+}
+.mat-card-title{
+  color: #202124;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+a{
+  text-decoration: none;
+}
+
+// site css
+html {
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  min-height: 100%;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.load-container {
+  position: relative;
+  display: flex;
+  height: 50vh;
+  align-items: center;
+  justify-content: center;
+  .loader {
+    border: 16px solid #00254c;
+    border-top: 0;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.mat-card code{
+  font-size: 16px;
+  font-weight:bold;
+}
+.mat-tab-labels{
+      justify-content: space-around;
+
+}
+.tab-group-wrapper .mat-card-header-text{
+  margin:0;
+}
+.tab-item-article .mat-card-header .mat-card-title{
+  font-size:18px;
+}
+.tab-item-article .mat-card-header .mat-card-subtitle{
+  font-size:15px;
+}
+.article-link-search {
+  text-decoration: none;
+  &:focus,
+  &:hover {
+    text-decoration: none;
+  }
+  .mat-card-title {
+    font-size: 16px;
+  }
+}
+.article{
+  .mat-raised-button {
+    background-color: #00254c !important;
+    .mat-button-wrapper{
+      color: #fff !important
+    }
+  }
+}
